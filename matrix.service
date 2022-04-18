@@ -1,0 +1,13 @@
+[Unit]
+Description=Matrix service
+After=multi-user.target
+
+[Service]
+ExecStartPre=/usr/bin/ip_validation.sh
+Type=simple
+Restart=always
+ExecStart=/usr/bin/python3 /root/sandbox/matrix.py
+User=root
+
+[Install]
+WantedBy=multi-user.target
