@@ -36,6 +36,9 @@ Copy files/enable the services
 $ cp -v matrix.service /etc/systemd/system/
 'matrix.service' -> '/etc/systemd/system/matrix.service'
 
+$ mkdir -p /root/sandbox
+$ cp -v matrix.py /root/sandbox/
+
 $ cp -v ip_validation.sh /usr/bin/
 'ip_validation.sh' -> '/usr/bin/ip_validation.sh'
 
