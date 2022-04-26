@@ -51,14 +51,20 @@ OR
 $ cp -v info-validationIPs /root/
 'info-validationIPs' -> '/root/info-validationIPs'
 
+$ chmod 755 /usr/bin/ip_validation.sh 
+
 The default /root/sandbox directory has two files: info and info-multipleIPs. First is with only one local IP address. Second is with multiple good/wrong IPs. You can test the bash script.
 $ cp -v info-multipleIPs /root/info
+
 cp: overwrite '/root/info'? y
 'info-multipleIPs' -> '/root/info'
+
 $ systemctl stop matrix.service
+
 $ systemctl start matrix.service
 Job for matrix.service failed because the control process exited with error code.
 See "systemctl status matrix.service" and "journalctl -xe" for details.
+
 $ systemctl status matrix.service
 ● matrix.service - Matrix service
    Loaded: loaded (/etc/systemd/system/matrix.service; enabled; vendor preset: enabled)
@@ -73,6 +79,7 @@ Apr 15 10:31:29 sound-bongo-w1ny systemd[1]: Failed to start Matrix service.
 Apr 15 10:31:29 sound-bongo-w1ny systemd[1]: matrix.service: Service hold-off time over, scheduling restart.
 
 The script failed because the bash script found the wrong IP address:
+
 $ ./ip_validation.sh
 1. Checking port server range.
 Port server 6789 is valid -> the port range is 1-61000.
