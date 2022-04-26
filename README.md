@@ -32,16 +32,22 @@ So tasks:
 2. The matrix.py python script in in the /home/sandbox home directory.
 
 Copy files/enable the services
+
 $ cp -v matrix.service /etc/systemd/system/
 'matrix.service' -> '/etc/systemd/system/matrix.service'
+
 $ cp -v ip_validation.sh /usr/bin/
 'ip_validation.sh' -> '/usr/bin/ip_validation.sh'
+
 $ systemctl daemon-reload
+
 $ systemctl enable --now matrix.service
 Created symlink /etc/systemd/system/multi-user.target.wants/matrix.service → /etc/systemd/system/matrix.service.
+
 $ cp -v info /root/
 'info' -> '/root/info''
 OR
+
 $ cp -v info-validationIPs /root/
 'info-validationIPs' -> '/root/info-validationIPs'
 
